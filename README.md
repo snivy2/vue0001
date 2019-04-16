@@ -12,7 +12,7 @@
 
 ######项目框架是用vue-cil搭建的 省时省事
 
-#######这是项目的前端部分，后端部分见express0001仓储
+#######这是项目的前端部分，后端部分见express0001仓库
 ``` bash
 # install dependencies
 npm install
