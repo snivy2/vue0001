@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <div >
-<el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-   <el-form-item label="账号" prop="username">
-    <el-input v-model.number="ruleForm2.username"></el-input>
+    <div  class="zhuce">
+<el-form :model="user" status-icon :rules="rules2" ref="user" label-width="100px" class="demo-ruleForm">
+   <el-form-item label="账号" prop="userName">
+   <div> <el-input v-model="user.userName"></el-input></div>
   </el-form-item>
-  <el-form-item label="密码" prop="pass">
-    <el-input type="password" v-model="ruleForm2.pass" autocomplete="off"></el-input>
+  <el-form-item label="密码" prop="userPwd">
+    <el-input type="password" v-model="user.userPwd" autocomplete="off"></el-input>
   </el-form-item>
   <el-form-item label="确认密码" prop="checkPass">
-    <el-input type="password" v-model="ruleForm2.checkPass" autocomplete="off"></el-input>
+    <el-input type="password" v-model="user.checkPass" autocomplete="off"></el-input>
   </el-form-item>
  
   <el-form-item>
-    <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
-    <el-button @click="resetForm('ruleForm2')">重置</el-button>
+    <el-button type="primary" @click="submitForm('user')">提交</el-button>
+    <el-button @click="resetForm('user')">重置</el-button>
   </el-form-item>
 </el-form>
 
@@ -40,8 +40,8 @@ export default {
         if (value === '') {
           callback(new Error('请输入密码'));
         } else {
-          if (this.ruleForm2.checkPass !== '') {
-            this.$refs.ruleForm2.validateField('checkPass');
+          if (this.user.checkPass !== '') {
+            this.$refs.user.validateField('checkPass');
           }
           callback();
         }
@@ -49,26 +49,27 @@ export default {
       var validatePass2 = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请再次输入密码'));
-        } else if (value !== this.ruleForm2.pass) {
+        } else if (value !== this.user.userPwd) {
           callback(new Error('两次输入密码不一致!'));
         } else {
           callback();
         }
       };
     return {
-       ruleForm2: {
-          pass: '',
+       user: {
+          userName:'',
+          userPwd: '',
           checkPass: '',
-          username: ''
+       
       },
       rules2: {
-        pass: [
+        userPwd: [
           { validator: validatePass, trigger: 'blur' }
         ],
         checkPass: [
           { validator: validatePass2, trigger: 'blur' }
         ],
-        username: [
+        userName: [
           { validator: checkRule, trigger: 'blur' }
         ]
       }
@@ -83,19 +84,21 @@ export default {
   methods: {
     postRegister(){
 
-      axios.post('',this.ruleForm2).then((res)=>{
-        if(res.data.status === '200'){
+      axios.post('/api/login/add',this.user).then((res)=>{
+         if(res.data.status === '401'){
+          alert('用户已存在')
+        }else{
           this.$message('注册成功');
-          let storage = window.localStorage;
+       /*    let storage = window.localStorage;
           storage.username = this.ruleForm2.username;
-          storage.pass = this.ruleForm2.pass;
+          storage.pass = this.ruleForm2.pass; */
         }
       }).catch((err)=>{
         this.$message.error('注册失败');
       })
     },
-    submitForm(formName) {
-      this.$refs[formName].validate((valid) => {
+    submitForm(user) {
+      this.$refs[user].validate((valid) => {
         if (valid) {
           this.postRegister();
         } else {
@@ -110,5 +113,8 @@ export default {
 }
 </script>
 
-<style>
+<style> 
+.zhuce{
+  margin-top: 150px
+}
 </style>
