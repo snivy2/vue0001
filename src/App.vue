@@ -39,7 +39,7 @@ export default {
     /* myHomepage:myHomepage */
   },
   created(){
-    if(window.localStorage.username && window.localStorage.username !== ''){
+    if(window.localStorage.userName && window.localStorage.userName !== ''){
       this.$message('我已经登陆了');
     } else {
       this.$message.error('未登录');

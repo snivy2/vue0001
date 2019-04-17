@@ -25,6 +25,8 @@ import guanxinxi from'./../components/guanxinxi';
 import guanbaoxiu from'./../components/guanbaoxiu';
 import guandenglu from'./../components/guandenglu';
 
+import dengchu from'./../components/dengchu'
+
 
 Vue.use(VueRouter);
 
@@ -82,6 +84,11 @@ export default new VueRouter({
           path:'/user/userdenglu',
           component:myuserdenglu,
           name:'myuserdenglu'
+        },
+        {
+          path:'/user/dengchu',
+          component:dengchu,
+          name:'mydengchu'
         },
       
       ]
