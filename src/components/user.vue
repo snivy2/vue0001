@@ -78,7 +78,7 @@
     <!-- 显示组件的地方 -->
     <el-main>
 
-      <router-view></router-view>
+  <router-view ></router-view>
     </el-main>
 
 </el-container>
@@ -118,6 +118,7 @@ export default {
 </script>
 
 <style scoped>
+
 .tupian{
   height: 400px;
 }
