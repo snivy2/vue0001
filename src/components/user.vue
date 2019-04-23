@@ -91,69 +91,67 @@
 
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 // import myuser from "./user";
 
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
-    }
+      msg: "Welcome to Your Vue.js App"
+    };
   },
 
   components: {
     // myuser: myuser,
   },
-  methods:{
- handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    }
   }
-}
-
+};
 </script>
 
 <style scoped>
-
-.tupian{
+.tupian {
   height: 400px;
 }
-.city{
+.city {
   height: 100%;
-  width:100%
+  width: 100%;
 }
 
 .el-aside {
-    background-color: #FFFFFFFF;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
-  .el-main {
-    background-color: #FFFFFFFF;
-    color:#333;
-    text-align: center;
-    line-height: 160px;
-  }
+  background-color: #ffffffff;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
+}
+.el-main {
+  background-color: #ffffffff;
+  color: #333;
+  text-align: center;
+  line-height: 160px;
+}
 
-    body > .el-container {
-    margin-bottom: 40px;
-  }
-  
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-  
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
+body > .el-container {
+  margin-bottom: 40px;
+}
 
- /*  .rongqi{
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+  line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+  line-height: 320px;
+}
+
+/*  .rongqi{
     position: fixed;
     left:  15%;
     right: 15%;

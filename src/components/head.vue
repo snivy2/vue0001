@@ -10,7 +10,7 @@
    <el-menu-item index="6" disabled>   </el-menu-item>
     <el-menu-item index="7" disabled>   </el-menu-item>
   <el-menu-item index="/homepage"  >首页</el-menu-item>
-  <el-submenu index="2">
+  <!-- <el-submenu index="2">
     <template slot="title">管理</template>
     <el-menu-item index="2-1">选项1</el-menu-item>
     <el-menu-item index="2-2">选项2</el-menu-item>
@@ -21,7 +21,7 @@
       <el-menu-item index="2-4-2">选项2</el-menu-item>
       <el-menu-item index="2-4-3">选项3</el-menu-item>
     </el-submenu>
-  </el-submenu>
+  </el-submenu> -->
   <el-menu-item index="/myTest" >新闻中心</el-menu-item>
   <el-menu-item index="/user"><!-- <a href="https://www.ele.me" target="_blank"> -->住户入口<!-- </a> --></el-menu-item>
   <el-menu-item index="/liuyan" >向我留言</el-menu-item>
