@@ -6,6 +6,8 @@ import myTest from'./../components/test';
 import myliuyan from'./../components/liuyan';
 import myuser from'./../components/user';
 import myguan from'./../components/guan';
+import aboutus from'./../components/aboutus';
+
 
 import myceshi from'./../components/userzhuce';
 
@@ -37,6 +39,7 @@ export default new VueRouter({
     routes: [
       // luyouguize
       { path: '/', component: myHomepage,name:'homepage' },
+      { path: '/aboutus', component: aboutus,name:'aboutus' },
       /* { path: '/goodslist', component: goodslist } */
       {path: '/myTest',component:myTest,name:'myTest'},
       {path: '/homepage',redirect:'/'},

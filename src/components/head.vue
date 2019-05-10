@@ -22,11 +22,12 @@
       <el-menu-item index="2-4-3">选项3</el-menu-item>
     </el-submenu>
   </el-submenu> -->
-  <el-menu-item index="/myTest" >新闻中心</el-menu-item>
+   <el-menu-item index="/aboutus" >关于我们</el-menu-item>
+  <!-- <el-menu-item index="/myTest" >接口测试</el-menu-item>测试接口用 -->
   <el-menu-item index="/user"><!-- <a href="https://www.ele.me" target="_blank"> -->住户入口<!-- </a> --></el-menu-item>
-  <el-menu-item index="/liuyan" >向我留言</el-menu-item>
+  <!-- <el-menu-item index="/liuyan" >向我留言</el-menu-item>  测试用 -->
   <el-menu-item index="/guan" >物业入口</el-menu-item>
-  <el-menu-item index="/ceshi" >ceshi</el-menu-item>
+  <!-- <el-menu-item index="/ceshi" >ceshi</el-menu-item> 测试用的 需要时解除注释-->
 </el-menu>
 
 

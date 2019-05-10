@@ -12,7 +12,17 @@
   
    <router-view></router-view>
   </el-main>
-  <el-footer>Footer</el-footer>
+  <el-footer style="height:180px">
+  <p style="margin-top:50px;margin-bottom:50px">
+      <span>版权所有：徐建华&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>南京审计大学毕业作品</span>
+  </p>
+  <p>
+      <span>仅供学习用途 欢迎讨论&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <span>github：snivy2</span>
+  </p>
+  </el-footer>
+
 </el-container>
 
 
@@ -70,12 +80,17 @@ body{
   background-color: #F6FAFC;
   color: #333;
   text-align: center;
-  line-height: 60px;
+  height: 200px;
+
+}
+.el-footer>p{
+color:#aaa;
+padding:0;
+margin:0;
 }
 .el-main {
   background-color: #e9eef3;
   color: #333;
-  text-align: center;
   line-height: 160px;
   padding: 0;
 }
