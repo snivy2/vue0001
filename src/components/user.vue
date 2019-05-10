@@ -20,6 +20,11 @@
         </el-menu-item-group>
        
       </el-submenu> -->
+      
+      <el-menu-item index="/user/jiaofei" >
+        <i class="el-icon-document"></i>
+        <span slot="title">一键缴费</span>
+      </el-menu-item>
 <el-menu-item index="/user/usertousu" >
         <i class="el-icon-document"></i>
         <span slot="title">投诉留言</span>
@@ -118,7 +123,7 @@ export default {
 
 <style scoped>
 .tupian {
-  height: 400px;
+  height: 340px;
 }
 .city {
   height: 100%;

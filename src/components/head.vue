@@ -5,7 +5,7 @@
 
   <div class="headmeau">
 <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" :router="true">
-  <el-menu-item index="0" ><img src="./imgs/schoollogo.jpg" class="sclogo"/></el-menu-item>
+  <el-menu-item index="0" ><img src="../assets/mylogo.png" class="sclogo"/></el-menu-item>
   <el-menu-item index="5" disabled>   </el-menu-item>
    <el-menu-item index="6" disabled>   </el-menu-item>
     <el-menu-item index="7" disabled>   </el-menu-item>

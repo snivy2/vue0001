@@ -35,7 +35,8 @@ created(){
       user:{
         userName:'',
         userPwd:''
-      }
+      },
+      userinfo:{}
       ,
       msg: "Welcome to Your Vue.js App"
     };
@@ -52,6 +53,22 @@ created(){
           let storage = window.localStorage;
           storage.userName = this.user.userName;
           storage.userPwd = this.user.userPwd;
+          axios.post("/api/info/xjh10", this.user).then(res => {
+          this.userinfo = res.data.result;
+          storage.mianji = this.userinfo.mianji;
+          storage.month = this.userinfo.month;
+          storage.panduan = this.userinfo.panduan;
+          storage.zhuangtai = this.userinfo.zhuangtai;
+          storage.trueName = this.userinfo.trueName;
+          storage.phoneNum = this.userinfo.phoneNum;
+          storage.loudong = this.userinfo.loudong;
+          storage.loucen = this.userinfo.loucen;
+          storage.doorNum = this.userinfo.doorNum;
+          storage.totalNum = this.userinfo.totalNum;
+        })
+        .catch(err => {
+          console.log(err);
+        });
           this.$router.push({name: 'myusertousu'});
         }
       }).catch((err)=>{

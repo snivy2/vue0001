@@ -19,6 +19,7 @@ import myuserxiugai from'./../components/userxiugai';
 import myuserbaoxiu from'./../components/userbaoxiu';
 import myuserzhuce from'./../components/userzhuce';
 import myuserdenglu from'./../components/userdenglu';
+import myuserjiaofei from'./../components/userjiaofei';
 
 import guantousu from'./../components/guantousu';
 import guanxinwen from'./../components/guanxinwen';
@@ -26,6 +27,8 @@ import guantongzhi from'./../components/guantongzhi';
 import guanxinxi from'./../components/guanxinxi';
 import guanbaoxiu from'./../components/guanbaoxiu';
 import guandenglu from'./../components/guandenglu';
+import guanjiaofei from'./../components/guanjiaofei';
+import guanchewei from'./../components/guanchewei';
 
 import dengchu from'./../components/dengchu'
 
@@ -93,6 +96,11 @@ export default new VueRouter({
           component:dengchu,
           name:'mydengchu'
         },
+        {
+          path:'/user/jiaofei',
+          component:myuserjiaofei,
+          name:'myjiaofei'
+        },
       
       ]
     },
@@ -103,6 +111,16 @@ export default new VueRouter({
         path:'/guan/guantousu',
         component:guantousu,
         name:'guantousu'
+      },
+      {
+        path:'/guan/guanjiaofei',
+        component:guanjiaofei,
+        name:'guanjiaofei'
+      },
+      {
+        path:'/guan/guanchewei',
+        component:guanchewei,
+        name:'guanchewei'
       },
       {
         path:'/guan/guanxinwen',

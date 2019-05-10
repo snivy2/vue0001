@@ -40,6 +40,14 @@
         <i class="el-icon-document"></i>
         <span slot="title">住户信息管理</span>
       </el-menu-item>
+       <el-menu-item index="/guan/guanchewei" >
+        <i class="el-icon-document"></i>
+        <span slot="title">车位管理</span>
+      </el-menu-item>
+          <el-menu-item index="/guan/guanjiaofei" >
+        <i class="el-icon-document"></i>
+        <span slot="title">收费管理</span>
+      </el-menu-item>
   
       <el-menu-item index="/guan/guanbaoxiu" >
         <i class="el-icon-document"></i>
@@ -94,7 +102,7 @@ export default {
 
 <style scoped>
 .tupian {
-  height: 400px;
+  height: 340px;
 }
 .city {
   height: 100%;

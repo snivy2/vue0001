@@ -2,21 +2,21 @@
   <div id="app" class="wai">
     <div  class="baoxiu">
  <el-form ref="form" :model="baoxiu" label-width="80px">
-  <el-form-item label="报修人">
+  <!-- <el-form-item label="报修人">
     <div class="baoxiuren">
     <el-input v-model="baoxiu.baoxiuName"></el-input>
     </div>
-  </el-form-item>
-    <el-form-item label="联系方式">
+  </el-form-item> -->
+    <!-- <el-form-item label="联系方式">
     <div class="baoxiuren">
     <el-input v-model="baoxiu.phoneNum"></el-input>
     </div>
-  </el-form-item>
-    <el-form-item label="上门地址">
+  </el-form-item> -->
+   <!--  <el-form-item label="上门地址">
     <div class="baoxiuren">
     <el-input v-model="baoxiu.baoxiuAdd" placeholder="示例：5栋508"></el-input>
     </div>
-  </el-form-item>
+  </el-form-item> -->
   <el-form-item label="报修类型">
     <div class="baoxiuleixin">
     <el-select v-model="baoxiu.baoxiuType" placeholder="请选择报修类型">
@@ -61,7 +61,15 @@ export default {
     };
   }
   ,
+  created(){
+this.fuzhi2()
+  },
   methods:{
+    fuzhi2(){
+      this.baoxiu.baoxiuName = window.localStorage.trueName;
+      this.baoxiu.phoneNum = window.localStorage.phoneNum;
+      this.baoxiu.baoxiuAdd = window.localStorage.loudong.toString()+"栋"+window.localStorage.doorNum.toString()
+    },
     onSubmit() {
        axios.post('/api/baoxiu/add',this.baoxiu).then((res)=>{
         if(res.data.status === '401'){

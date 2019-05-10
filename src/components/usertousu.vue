@@ -2,21 +2,21 @@
   <div id="app" class="wai">
     <div class="tousu" >
 <el-form ref="form" :model="tousu" label-width="80px">
-  <el-form-item label="您的姓名">
+<!--   <el-form-item label="您的姓名">
     <div class="baoxiuren">
     <el-input v-model="tousu.tousuName"></el-input>
     </div>
-  </el-form-item>
-    <el-form-item label="联系方式">
+  </el-form-item> -->
+   <!--  <el-form-item label="联系方式">
     <div class="baoxiuren">
     <el-input v-model="tousu.phoneNum"></el-input>
     </div>
-  </el-form-item>
-    <el-form-item label="联系地址">
+  </el-form-item> -->
+    <!-- <el-form-item label="联系地址">
     <div class="baoxiuren">
     <el-input v-model="tousu.tousuAdd" placeholder="示例：5栋508"></el-input>
     </div>
-  </el-form-item>
+  </el-form-item> -->
   <el-form-item label="投诉/留言">
     <div class="baoxiuleixin">
     <el-select v-model="tousu.tousuType" placeholder="投诉/留言">
@@ -59,7 +59,15 @@ export default {
     };
   }
 ,
+created(){
+this.fuzhi()
+},
   methods:{
+    fuzhi(){
+      this.tousu.tousuName = window.localStorage.trueName;
+      this.tousu.phoneNum = window.localStorage.phoneNum;
+      this.tousu.tousuAdd = window.localStorage.loudong.toString()+"栋"+window.localStorage.doorNum.toString()
+    },
     onSubmit() {
        axios.post('/api/tousu/add',this.tousu).then((res)=>{
         if(res.data.status === '401'){
