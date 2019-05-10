@@ -51,8 +51,8 @@
         </template>
         <el-menu-item-group>
      
-          <el-menu-item index="/user/userluru">录入</el-menu-item>
-          <el-menu-item index="/user/userxiugai">修改</el-menu-item>
+        <!--   <el-menu-item index="/user/userluru">录入</el-menu-item> -->
+          <el-menu-item index="/user/userxiugai">查看</el-menu-item>
         </el-menu-item-group>
 
       </el-submenu>
@@ -69,7 +69,7 @@
         </template>
         <el-menu-item-group>
      
-          <el-menu-item index="/user/userzhuce">注册</el-menu-item>
+          <el-menu-item index="/user/userzhuce">密码修改</el-menu-item>
           <el-menu-item index="/user/userdenglu">登陆/登出</el-menu-item>
         </el-menu-item-group>
 

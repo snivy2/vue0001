@@ -2,9 +2,9 @@
   <div id="app">
     <div  class="zhuce">
 <el-form :model="user" status-icon :rules="rules2" ref="user" label-width="100px" class="demo-ruleForm">
-   <el-form-item label="账号" prop="userName">
+   <!-- <el-form-item label="账号" prop="userName">
    <div> <el-input v-model="user.userName"></el-input></div>
-  </el-form-item>
+  </el-form-item> -->
   <el-form-item label="密码" prop="userPwd">
     <el-input type="password" v-model="user.userPwd" autocomplete="off"></el-input>
   </el-form-item>
@@ -77,25 +77,36 @@ export default {
     }
   },
   created(){
+    this.fuzhi2();
     if(window.localStorage.username !== ''){
       console.log('我已经登录了')
     }
   },
   methods: {
+    fuzhi2(){
+      this.user.userName = window.localStorage.userName
+    }
+,
     postRegister(){
-
-      axios.post('/api/login/add',this.user).then((res)=>{
+      axios.post('/api/login/update',this.user).then((res)=>{
+        if(res.data.status === '404'){
+          alert('用户名不存在')
+        } else {
+          alert('修改成功');
+        }
+      }).catch((err)=>{
+        alert('修改失败')
+      })
+    
+     /*  axios.post('/api/login/add',this.user).then((res)=>{
          if(res.data.status === '401'){
           alert('用户已存在')
         }else{
           this.$message('注册成功');
-       /*    let storage = window.localStorage;
-          storage.username = this.ruleForm2.username;
-          storage.pass = this.ruleForm2.pass; */
         }
       }).catch((err)=>{
         this.$message.error('注册失败');
-      })
+      }) */
     },
     submitForm(user) {
       this.$refs[user].validate((valid) => {

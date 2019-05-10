@@ -61,7 +61,8 @@ mounted() {
   text-decoration: none;
   border: 1px solid;
   color: black;
-  text-align: center
+  text-align: center;
+  border-radius: 5px;
 }
 .lianxi:hover{
   color: white;

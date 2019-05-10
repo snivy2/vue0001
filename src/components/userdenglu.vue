@@ -65,6 +65,12 @@ created(){
           storage.loucen = this.userinfo.loucen;
           storage.doorNum = this.userinfo.doorNum;
           storage.totalNum = this.userinfo.totalNum;
+          storage.gender = this.userinfo.gender;
+          storage.birth = this.userinfo.birth;
+          storage.ruzhuDate = this.userinfo.ruzhuDate;
+          storage.idcardNum = this.userinfo.idcardNum;
+          storage.job = this.userinfo.job;
+          storage.minzu = this.userinfo.minzu;
         })
         .catch(err => {
           console.log(err);
