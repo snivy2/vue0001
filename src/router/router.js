@@ -20,6 +20,7 @@ import myuserbaoxiu from'./../components/userbaoxiu';
 import myuserzhuce from'./../components/userzhuce';
 import myuserdenglu from'./../components/userdenglu';
 import myuserjiaofei from'./../components/userjiaofei';
+import myuseryijiaofei from'./../components/useryijiaofei';
 
 import guantousu from'./../components/guantousu';
 import guanxinwen from'./../components/guanxinwen';
@@ -101,7 +102,11 @@ export default new VueRouter({
           component:myuserjiaofei,
           name:'myjiaofei'
         },
-      
+        {
+          path:'/user/yijiaofei',
+          component:myuseryijiaofei,
+          name:'myyijiaofei'
+        },
       ]
     },
      

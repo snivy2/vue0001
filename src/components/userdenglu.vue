@@ -71,6 +71,7 @@ created(){
           storage.idcardNum = this.userinfo.idcardNum;
           storage.job = this.userinfo.job;
           storage.minzu = this.userinfo.minzu;
+          storage.cheweishu = this.userinfo.cheweishu;
         })
         .catch(err => {
           console.log(err);

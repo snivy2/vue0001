@@ -7,25 +7,38 @@
       style="width: 100%">
       <el-table-column
         prop="date"
-        label="日期"
+        label="业主"
         width="180">
       </el-table-column>
       <el-table-column
         prop="name"
-        label="姓名"
+        label="条目"
         width="180">
       </el-table-column>
            <el-table-column
-        prop="name"
-        label="姓名"
+        prop="address"
+        label="单价"
         width="180">
       </el-table-column>
       <el-table-column
-        prop="address"
-        label="地址">
+        prop="cont"
+        label="数量">
+      </el-table-column>
+      <el-table-column
+        prop="total"
+        label="总价"
+        width="180">
       </el-table-column>
       
+      
     </el-table>
+
+    <p id="jisuan">
+    <span>总计：</span>
+    <span>{{zongji}}</span>
+    </p>
+
+    <el-button type="danger">一键缴费</el-button>
   
   </div>
 </template>
@@ -39,22 +52,32 @@ components: {},
 data() {
 //这里存放数据
 return {
+  zongji:0,
+  panduan:'',
     tableData: [{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
+            date: '我',
+            name: '基础物业费',
+            address: '1.5元/平方米',
+            cont: 0,
+            total:0
           }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
+            date: '我',
+            name: '公共设备运维',
+            address: '50元',
+            cont: 1,
+            total:50,
           }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
+            date: '我',
+            name: '公共清洁费',
+            address: '50元',
+            cont: 1,
+            total:50,
           }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
+            date: '我',
+            name: '车位费',
+            address: '200元',
+            cont: 0,
+            total:0
           }]
 };
 },
@@ -64,11 +87,40 @@ computed: {},
 watch: {},
 //方法集合
 methods: {
+  shifou(){
+    if(this.panduan='true'){
+       this.$router.push({name: 'myyijiaofei'});
+       return
+    }
+    else{
+      this.$router.push({name: 'myjiaofei'});
+      
+      return
+    }
+  },
+  getmianji(){
+    this.tableData[0].cont=window.localStorage.mianji
+    this.panduan=window.localStorage.zhuangtai
+     this.tableData[3].cont=window.localStorage.cheweishu
+  },
+  jisuan(){
+    this.tableData[0].total=parseFloat(this.tableData[0].address)*parseInt(this.tableData[0].cont)
+    this.tableData[3].total=parseFloat(this.tableData[3].address)*parseInt(this.tableData[3].cont)
+  },
+  zong(){
+    this.zongji+=this.tableData[0].total;
+    this.zongji+=this.tableData[1].total;
+    this.zongji+=this.tableData[2].total;
+    this.zongji+=this.tableData[3].total;
+  }
     
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {
-
+  this.getmianji();
+  this.jisuan();
+  this.zong();
+  this.shifou();
 },
 //生命周期 - 挂载完成（可以访问DOM元素）
 mounted() {
@@ -76,6 +128,10 @@ mounted() {
 },
 }
 </script>
-<style>
+<style scoped>
+p{
+  height: 30px;
+  line-height: 30px
+}
 
 </style>
