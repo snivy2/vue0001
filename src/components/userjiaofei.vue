@@ -38,22 +38,25 @@
     <span>{{zongji}}</span>
     </p>
 
-    <el-button type="danger">一键缴费</el-button>
+    <el-button type="danger" @click="yijianjiaofei()">一键缴费</el-button>
   
   </div>
 </template>
 
 <script>
 //例：import 《组件名称》 from '《组件路径》';
+  import axios from 'axios';
+  export default {
 
-export default {
 //import引入的组件需要注入到对象中才能使用
+
 components: {},
 data() {
 //这里存放数据
 return {
   zongji:0,
   panduan:'',
+  houtai:{},
     tableData: [{
             date: '我',
             name: '基础物业费',
@@ -88,20 +91,25 @@ watch: {},
 //方法集合
 methods: {
   shifou(){
-    if(this.panduan='true'){
+    console.log(this.panduan,'sdasdadad')
+    if(this.panduan === '1'){
+      console.log(this.panduan)
        this.$router.push({name: 'myyijiaofei'});
-       return
     }
     else{
       this.$router.push({name: 'myjiaofei'});
-      
-      return
+      console.log(this.panduan)
     }
   },
   getmianji(){
     this.tableData[0].cont=window.localStorage.mianji
-    this.panduan=window.localStorage.zhuangtai
-     this.tableData[3].cont=window.localStorage.cheweishu
+    if(window.localStorage.zhuangtai == '是'){
+      this.panduan = '1'
+    } else{
+      this.panduan = '0'
+    }
+    this.tableData[3].cont=window.localStorage.cheweishu
+    this.houtai.userName=window.localStorage.userName
   },
   jisuan(){
     this.tableData[0].total=parseFloat(this.tableData[0].address)*parseInt(this.tableData[0].cont)
@@ -112,6 +120,19 @@ methods: {
     this.zongji+=this.tableData[1].total;
     this.zongji+=this.tableData[2].total;
     this.zongji+=this.tableData[3].total;
+  },
+  yijianjiaofei(){
+    this.houtai.zhuangtai="是"
+       axios.post('/api/info/jiaofei',this.houtai).then((res)=>{
+        if(res.data.status === '404'){
+          alert('用户名不存在')
+        } else {
+          alert('缴费成功');
+           this.$router.push({name: 'myyijiaofei'});
+        }
+      }).catch((err)=>{
+        alert('修改失败')
+      })
   }
     
 },
@@ -120,11 +141,10 @@ created() {
   this.getmianji();
   this.jisuan();
   this.zong();
-  this.shifou();
 },
 //生命周期 - 挂载完成（可以访问DOM元素）
 mounted() {
-
+  this.shifou();
 },
 }
 </script>
