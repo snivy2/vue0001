@@ -42,7 +42,11 @@
       </template>
     </el-table-column> -->
   </el-table>
-
+<div class="biaodan">
+<el-input v-model="bianhao" placeholder="车位编号"></el-input>
+<el-input v-model="trueName" placeholder="业主名称"></el-input>
+</div>
+ <el-button type="primary">售出</el-button>
 </div>
 </template>
 
@@ -55,6 +59,10 @@ components: {},
 data() {
 //这里存放数据
 return {
+ chewei:{
+   bianhao:1,
+   trueName:""
+ },
 cheweiArr:[
 
 ]
@@ -84,6 +92,11 @@ mounted() {
 },
 }
 </script>
-<style>
-
+<style scoped>
+.el-input {
+    float: left;
+    font-size: 14px;
+    width: 30%;
+    margin-right: 30px
+}
 </style>

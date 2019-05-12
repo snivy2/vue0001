@@ -102,6 +102,10 @@ methods: {
     }
   },
   getmianji(){
+    this.tableData[0].date=window.localStorage.trueName
+    this.tableData[1].date=window.localStorage.trueName
+    this.tableData[2].date=window.localStorage.trueName
+    this.tableData[3].date=window.localStorage.trueName
     this.tableData[0].cont=window.localStorage.mianji
     if(window.localStorage.zhuangtai == '是'){
       this.panduan = '1'
@@ -113,6 +117,7 @@ methods: {
   },
   jisuan(){
     this.tableData[0].total=parseFloat(this.tableData[0].address)*parseInt(this.tableData[0].cont)
+  
     this.tableData[3].total=parseFloat(this.tableData[3].address)*parseInt(this.tableData[3].cont)
   },
   zong(){
