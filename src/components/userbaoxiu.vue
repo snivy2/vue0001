@@ -62,6 +62,13 @@ export default {
   }
   ,
   created(){
+     
+       if(window.localStorage.userName && window.localStorage.userName !== ''){
+      
+    } else {
+       this.$router.push({name: 'userdef'});
+    }
+  
 this.fuzhi2()
   },
   methods:{

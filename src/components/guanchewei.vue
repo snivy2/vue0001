@@ -43,10 +43,10 @@
     </el-table-column> -->
   </el-table>
 <div class="biaodan">
-<el-input v-model="bianhao" placeholder="车位编号"></el-input>
-<el-input v-model="trueName" placeholder="业主名称"></el-input>
+<el-input v-model="chewei.bianhao" placeholder="车位编号"></el-input>
+<el-input v-model="chewei.trueName" placeholder="业主名称"></el-input>
 </div>
- <el-button type="primary">售出</el-button>
+ <el-button type="primary" @click="sub()">售出</el-button>
 </div>
 </template>
 
@@ -60,7 +60,7 @@ data() {
 //这里存放数据
 return {
  chewei:{
-   bianhao:1,
+   bianhao:'1',
    trueName:""
  },
 cheweiArr:[
@@ -81,9 +81,24 @@ methods: {
         console.log(err);
       })
     },
+  sub(){
+    for(let i=0;i<=this.cheweiArr.length;i++){
+      if(this.cheweiArr[i].bianhao==this.chewei.bianhao){
+        this.cheweiArr[i].bianhao=this.chewei.bianhao;
+        this.cheweiArr[i].trueName=this.chewei.trueName;
+        this.cheweiArr[i].yishou='true';
+         this.$message('购买成功');
+      }
+    }
+  }
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {
+     if(window.localStorage.userName && window.localStorage.userName !== ''){
+      
+    } else {
+       this.$router.push({name: 'guandef'});
+    }
 this.getApi()
 },
 //生命周期 - 挂载完成（可以访问DOM元素）

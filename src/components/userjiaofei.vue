@@ -133,6 +133,7 @@ methods: {
           alert('用户名不存在')
         } else {
           alert('缴费成功');
+          window.localStorage.zhuangtai = '是'
            this.$router.push({name: 'myyijiaofei'});
         }
       }).catch((err)=>{
@@ -143,13 +144,20 @@ methods: {
 },
 //生命周期 - 创建完成（可以访问当前this实例）
 created() {
+ 
   this.getmianji();
   this.jisuan();
   this.zong();
 },
 //生命周期 - 挂载完成（可以访问DOM元素）
 mounted() {
-  this.shifou();
+  
+  this.shifou();  
+       if(window.localStorage.userName && window.localStorage.userName !== ''){
+      
+    } else {
+       this.$router.push({name: 'userdef'});
+    }
 },
 }
 </script>

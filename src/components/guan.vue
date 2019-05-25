@@ -53,6 +53,10 @@
         <i class="el-icon-document"></i>
         <span slot="title">管理报修</span>
       </el-menu-item>
+      <el-menu-item index="/guan/guanzhuce" >
+        <i class="el-icon-document"></i>
+        <span slot="title">新住户生成</span>
+      </el-menu-item>
       <el-menu-item index="/guan/guandenglu">
         <i class="el-icon-setting"></i>
         <span slot="title">登陆</span>

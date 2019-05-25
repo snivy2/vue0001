@@ -105,6 +105,11 @@ import axios from 'axios';
 export default {
   name: "app",
  created(){
+       if(window.localStorage.userName && window.localStorage.userName !== ''){
+      
+    } else {
+       this.$router.push({name: 'userdef'});
+    }
     this.getuserName();
   },
   data() {

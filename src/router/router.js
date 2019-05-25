@@ -21,6 +21,7 @@ import myuserzhuce from'./../components/userzhuce';
 import myuserdenglu from'./../components/userdenglu';
 import myuserjiaofei from'./../components/userjiaofei';
 import myuseryijiaofei from'./../components/useryijiaofei';
+import userdef from'./../components/userdef'
 
 import guantousu from'./../components/guantousu';
 import guanxinwen from'./../components/guanxinwen';
@@ -30,6 +31,11 @@ import guanbaoxiu from'./../components/guanbaoxiu';
 import guandenglu from'./../components/guandenglu';
 import guanjiaofei from'./../components/guanjiaofei';
 import guanchewei from'./../components/guanchewei';
+import guanzhuce from'./../components/guanzhuce';
+import guanluru from'./../components/guanluru';
+import guanluruchenggong from'./../components/guanluruchenggong';
+import guandef from'./../components/guandef'
+
 
 import dengchu from'./../components/dengchu'
 
@@ -93,6 +99,11 @@ export default new VueRouter({
           name:'myuserdenglu'
         },
         {
+          path:'/user/userdef',
+          component:userdef,
+          name:'userdef'
+        },
+        {
           path:'/user/dengchu',
           component:dengchu,
           name:'mydengchu'
@@ -116,6 +127,26 @@ export default new VueRouter({
         path:'/guan/guantousu',
         component:guantousu,
         name:'guantousu'
+      },
+      {
+        path:'/guan/guanluruchenggong',
+        component:guanluruchenggong,
+        name:'guanluruchenggong'
+      },
+      {
+        path:'/guan/guandef',
+        component:guandef,
+        name:'guandef'
+      },
+      {
+        path:'/guan/guanzhuce',
+        component:guanzhuce,
+        name:'guanzhuce'
+      },
+      {
+        path:'/guan/guanluru',
+        component:guanluru,
+        name:'guanluru'
       },
       {
         path:'/guan/guanjiaofei',

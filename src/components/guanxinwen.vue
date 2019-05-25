@@ -56,6 +56,13 @@ export default {
     };
   },
   created(){
+     
+       if(window.localStorage.userName && window.localStorage.userName !== ''){
+      
+    } else {
+       this.$router.push({name: 'guandef'});
+    
+  }
     // axios.get('/api/news/add1').then(res=>{
     //   console.log(res.data);
     // })

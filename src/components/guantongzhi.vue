@@ -67,6 +67,13 @@ export default {
         alert('添加失败')
       })
     },
+  },
+  created(){
+       if(window.localStorage.userName && window.localStorage.userName !== ''){
+      
+    } else {
+       this.$router.push({name: 'guandef'});
+    }
   }
 
 };
